@@ -9,20 +9,59 @@
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+.map-overlay {
+    
+    
+        position: absolute;
+        font-family: sans-serif;
+        margin-bottom: 40px;
+        margin-left: 5px;
+        padding: 5px;
+        width: 80%;
+        font-size: 14px;
+        color: #000000;
+      border-radius: 3px;
+      }
+
+      .foodInfo {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 2px solid black;
+  overflow: auto;
+  width: 26%;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+
 </style>
 </head>
 <body>
 <div id="map"></div>
+
+<div class='map-overlay' id='features'><h2>Free and low cost food programs within Zoning districts</h2>
+    <div id='pd'><p>Data provided by City of Vancouver</p></div></div>
+    <div class='foodInfo'>
+    <div><strong>Programme name:</strong> <span id='mag'></span></div>
+    <div><strong>Latitude:</strong> <span id='lat'></span><strong>°</strong></div>
+    <div><strong>Longitude:</strong> <span id='long'></span><strong>°</strong></div>
+</div>
+
 <script>
-   
 	mapboxgl.accessToken = 'pk.eyJ1Ijoid2Jvc2NvY2giLCJhIjoiY2xzeWF3cHhyMGMydDJxbzJjbnI3dmZjdSJ9.5ftVvYZFrbDXLrWfyi6mGA';
     const map = new mapboxgl.Map({
+        
         container: 'map', // container ID
-        style: 'mapbox://styles/wboscoch/clte6ipi200r001o88zl77t66', //hosted style id
-        center: [49.256,-123.123], // starting position
+        style: 'mapbox://styles/wboscoch/clte6ipi200r001o88zl77t66',
+        center: [-123.137, 49.247], // starting position [lng, lat]
         zoom: 11 // starting zoom
     });
+    
 </script>
-
 </body>
 </html>
