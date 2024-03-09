@@ -52,7 +52,7 @@
                   );
 
       var topoTiles = L.tileLayer(
-          								'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+          								'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
                           {
       										maxZoom: 15,
       										attribution: 'Basemap data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Basemap style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -80,14 +80,13 @@
      // };
       
       
- //poly fill colour 
-      function getColor(d) {
-    return d > 100 ?'#800026' :
-           d > 40  ?'#BD0026' :
-           d > 20  ?'#E31A1C' :
-           d > 9  ?'#FC4E2A' :
-           d > 7   ?'#FD8D3C' :
-           d > 1   ?'#FEB24C' :
+function getColor(d) {
+    return d > 100 ?'#193300' :
+           d > 40  ?'#336600' :
+           d > 20  ?'#4C9900' :
+           d > 9  ?'#66cc00' :
+           d > 7   ?'#80ff00' :
+           d > 1   ?'#99ff33' :
            d > 0.1   ?'#FED976' :
                       '#FFEDA0';
 }
